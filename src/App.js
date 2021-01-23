@@ -6,32 +6,32 @@ function App() {
       <div id="game">
         <h1>Tic Tac Toe</h1>
         <div id="board">
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
-            <button class="cell">
-                <span class="cell-content"></span>
+            <button className="cell">
+                <span className="cell-content"></span>
             </button>
         </div>
     </div>
