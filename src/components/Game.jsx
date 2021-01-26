@@ -1,14 +1,18 @@
+import React, { useState } from 'react';
 import './Game.css';
 import './Board/Board';
 import { Board } from './Board/Board';
 
 export const Game = () => {
-    const cellValues = ['', '', '', '', '', '', '', '', ''];
+    const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
     const winningCombination = [];
 
     const onCellClicked = (cellIndex) => {
-      console.log(`Cell ${cellIndex} clicked`);
+      const newCellValues = [...cellValues];
+      newCellValues[cellIndex] = 'X';
+      setCellValues(newCellValues);
   }
+
   return (
     <>
       <div id="game">
