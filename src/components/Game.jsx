@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './Game.css';
-import './Board/Board';
 import { Board } from './Board/Board';
 
 export const Game = () => {
     const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
+    const [xIsNext, setXIsNext] = useState(true);
     const winningCombination = [];
 
     const onCellClicked = (cellIndex) => {
       const newCellValues = [...cellValues];
-      newCellValues[cellIndex] = 'X';
+      newCellValues[cellIndex] = xIsNext ? 'X' : 'O';
       setCellValues(newCellValues);
+      setXIsNext(!xIsNext);
   }
 
   return (
