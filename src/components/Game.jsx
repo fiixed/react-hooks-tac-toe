@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Game.css';
 import { Board } from './Board/Board';
 import ResultModal from './ResultModal/ResultModal';
+import { calculateWinner } from '../utils/WinnerCalculator';
 
 export const Game = () => {
     const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
@@ -14,13 +15,14 @@ export const Game = () => {
     const onCellClicked = (cellIndex) => {
       if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
-
-        // Calculate the result
-        //setIsGameOver(true);
-
         newCellValues[cellIndex] = xIsNext ? 'X' : 'O';
+        // Calculate the result
+        
+        const calcResult = calculateWinner(newCellValues, cellIndex);
+        
         setCellValues(newCellValues);
         setXIsNext(!xIsNext);
+        setIsGameOver(calcResult.hasResult);
       }
       
   }
