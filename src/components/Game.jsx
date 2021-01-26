@@ -7,11 +7,16 @@ export const Game = () => {
     const [xIsNext, setXIsNext] = useState(true);
     const winningCombination = [];
 
+    const isCellEmpty = (cellIndex) => cellValues[cellIndex] === '';
+
     const onCellClicked = (cellIndex) => {
-      const newCellValues = [...cellValues];
-      newCellValues[cellIndex] = xIsNext ? 'X' : 'O';
-      setCellValues(newCellValues);
-      setXIsNext(!xIsNext);
+      if (isCellEmpty(cellIndex)) {
+        const newCellValues = [...cellValues];
+        newCellValues[cellIndex] = xIsNext ? 'X' : 'O';
+        setCellValues(newCellValues);
+        setXIsNext(!xIsNext);
+      }
+      
   }
 
   return (
