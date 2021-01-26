@@ -6,6 +6,7 @@ import ResultModal from './ResultModal/ResultModal';
 export const Game = () => {
     const [cellValues, setCellValues] = useState(['', '', '', '', '', '', '', '', '']);
     const [xIsNext, setXIsNext] = useState(true);
+    const [isGameOver, setIsGameOver] = useState(false);
     const winningCombination = [];
 
     const isCellEmpty = (cellIndex) => cellValues[cellIndex] === '';
@@ -13,6 +14,10 @@ export const Game = () => {
     const onCellClicked = (cellIndex) => {
       if (isCellEmpty(cellIndex)) {
         const newCellValues = [...cellValues];
+
+        // Calculate the result
+        //setIsGameOver(true);
+
         newCellValues[cellIndex] = xIsNext ? 'X' : 'O';
         setCellValues(newCellValues);
         setXIsNext(!xIsNext);
@@ -29,7 +34,9 @@ export const Game = () => {
           cellClicked={onCellClicked}
         />
     </div>
-    <ResultModal />
+    <ResultModal 
+      isGameOver={isGameOver}
+    />
   </>
   );
 }

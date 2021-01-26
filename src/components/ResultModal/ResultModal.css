@@ -1,5 +1,5 @@
 #modal-overlay {
-    display: grid;
+    display: none;
     justify-content: center;
     position: absolute;
     left: 0;
@@ -7,6 +7,10 @@
     top: 0;
     bottom: 0;
     background: var(--modal-overlay-color);
+}
+
+#modal-overlay.modal-open {
+    display: grid;
 }
 
 #game-result-modal {
