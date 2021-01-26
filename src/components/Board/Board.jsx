@@ -3,6 +3,8 @@ import { Cell } from '../Cell/Cell'
 import './Board.css'
 
 export const Board = (props) => {
+
+    
     
     const cells = props.cellValues.map((value, index) => {
         const canHighlight = props.winningCombination && 
@@ -11,7 +13,9 @@ export const Board = (props) => {
         return <Cell 
                 key={index} 
                 value={value} 
-                canHighlight={canHighlight}/>
+                canHighlight={canHighlight}
+                onClick={() => props.cellClicked(index)}
+                />
     });
     return (
         <>
