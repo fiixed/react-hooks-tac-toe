@@ -3,14 +3,19 @@ import './Board/Board';
 import { Board } from './Board/Board';
 
 export const Game = () => {
-    const cellValues = ['X', 'X', 'X', 'O', 'O', 'X', 'O', '', ''];
-    const winningCombination = [0, 1, 2];
+    const cellValues = ['', '', '', '', '', '', '', '', ''];
+    const winningCombination = [];
+
+    const onCellClicked = (cellIndex) => {
+      console.log(`Cell ${cellIndex} clicked`);
+  }
   return (
     <>
       <div id="game">
         <h1>Tic Tac Toe</h1>
         <Board cellValues={cellValues} 
           winningCombination={winningCombination}
+          cellClicked={onCellClicked}
         />
     </div>
 
